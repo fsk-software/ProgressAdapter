@@ -21,7 +21,10 @@ Then add the following the library to your modules gradle file
    }
    ```  
 
-This example uses the SimpleProgressAdapter, but the ProgressAdapter is very similar.  To use them, justextend the class and implement the abstract methods:
+## ProgressAdapter/SimpleProgressAdapter
+ ![progress adapter video](https://github.com/fsk-software/ProgressAdapter/blob/master/screenshots/empty-item-decoration-screen-rec.gif)
+ 
+This example uses the SimpleProgressAdapter, but the ProgressAdapter is very similar. Extend either class and implement the abstract methods:
         
  class GroceriesAdapter : SimpleProgressAdapter<String>() {
 
@@ -65,6 +68,9 @@ This example uses the SimpleProgressAdapter, but the ProgressAdapter is very sim
             progressBar.progress = progress
         }
     }
+
+## EmptyItemDecorator
+ ![empty_item_decorator video](https://github.com/fsk-software/ProgressAdapter/blob/master/screenshots/empty-item-decoration-screen-rec.gif)
 
 To use the EmptyItemDecorator, just assign a view to it and add it to the recycler view:
 
