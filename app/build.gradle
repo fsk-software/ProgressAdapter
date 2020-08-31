@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.targetSdk
+    buildToolsVersion "$versions.buildTools"
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+
+    implementation "androidx.core:core-ktx:$versions.androidX.coreKtx"
+    implementation "androidx.appcompat:appcompat:$versions.androidX.appCompat"
+    implementation "androidx.recyclerview:recyclerview:$versions.androidX.recyclerView"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'com.google.android.material:material:1.2.0'
+
+
+    implementation project(":progressadapter")
+
+    testImplementation "junit:junit:$versions.test.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.test.ext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.test.espresso"
+
+}

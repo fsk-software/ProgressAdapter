@@ -1,0 +1,3 @@
+include ':progressadapter'
+include ':app'
+rootProject.name = "ProgressAdapter"
